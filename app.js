@@ -2,6 +2,7 @@
 // Slice A: import getCountries from fetch-utils.js
 import { getCountries } from './fetch-utils.js';
 // Slice B: import getContinents from fetch-utils.js
+import { getContinents } from './fetch-utils.js';
 
 import { renderContinentOption, renderCountry } from './render-utils.js';
 
@@ -56,5 +57,7 @@ function displayCountries() {
 function displayContinentOptions() {
     for (const continent of continents) {
         // Slice B: Call continent render function and append to continent selector
+        const optionEl = renderContinentOption(continent);
+        continentSelect.append(optionEl);
     }
 }
